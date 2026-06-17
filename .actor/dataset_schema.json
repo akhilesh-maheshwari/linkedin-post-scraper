@@ -1,0 +1,38 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "postUrl",
+          "postId",
+          "authorName",
+          "authorProfileUrl",
+          "commentText",
+          "commentAuthor",
+          "commentDate",
+          "reactionType",
+          "reactorName",
+          "reactorProfileUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "postUrl":           { "label": "Post URL",            "format": "link" },
+          "postId":            { "label": "Post ID",             "format": "text" },
+          "authorName":        { "label": "Author Name",         "format": "text" },
+          "authorProfileUrl":  { "label": "Author Profile URL",  "format": "link" },
+          "commentText":       { "label": "Comment Text",        "format": "text" },
+          "commentAuthor":     { "label": "Comment Author",      "format": "text" },
+          "commentDate":       { "label": "Comment Date",        "format": "text" },
+          "reactionType":      { "label": "Reaction Type",       "format": "text" },
+          "reactorName":       { "label": "Reactor Name",        "format": "text" },
+          "reactorProfileUrl": { "label": "Reactor Profile URL", "format": "link" }
+        }
+      }
+    }
+  }
+}
