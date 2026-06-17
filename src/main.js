@@ -56,7 +56,10 @@ try {
   if (!validPosts.length) throw new Error('No valid LinkedIn post URLs or IDs found!');
 
   const rowCount   = validPosts.length;
-  const csvContent = 'post_url\n' + validPosts.join('\n');
+  const csvContent = 'Post URL/ID,sortCommentsBy,includeComments,includeReactions,reactionTypeFilter,commentsLimit,reactionsLimit\n' +
+    validPosts.map(u =>
+      `${u},${sortCommentsBy},${includeComments},${includeReactions},${reactionTypeFilter},${commentsLimit},${reactionsLimit}`
+    ).join('\n');
   const fileName   = serviceTagName.replace(/[^a-zA-Z0-9]/g, '_') + '_' + new Date().toISOString().replace(/[:.]/g, '-') + '.csv';
 
   console.log('CSV preview:\n', csvContent.split('\n').slice(0, 3).join('\n'));
