@@ -1,0 +1,10 @@
+{
+  "actorSpecification": 1,
+  "name": "linkedin-post-scraper",
+  "title": "LinkedIn Post Scraper",
+  "description": "Scrape comments and reactions from LinkedIn posts by URL or post ID",
+  "version": "0.0",
+  "buildTag": "latest",
+  "environmentVariables": {},
+  "dockerfile": "./Dockerfile"
+}
