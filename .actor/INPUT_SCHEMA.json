@@ -11,7 +11,8 @@
       "editor": "stringList",
       "items": {
         "type": "string"
-      }
+      },
+      "prefill": ["https://www.linkedin.com/posts/google_googleio-io25-gemini-activity-7330295765424046080-nSW4"]
     },
     "fileName": {
       "title": "Results File Name",
