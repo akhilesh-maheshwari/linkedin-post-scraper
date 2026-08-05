@@ -20,50 +20,6 @@
       "description": "Name your results file (without extension)",
       "editor": "textfield",
       "default": "linkedin-post-scraper-output"
-    },
-    "sortCommentsBy": {
-      "title": "Sort Comments By",
-      "type": "string",
-      "description": "Select the order in which comments are sorted",
-      "editor": "select",
-      "enum": ["MOST_RELEVANT", "MOST_RECENT"],
-      "enumTitles": ["Most Relevant", "Most Recent"],
-      "prefill": "MOST_RELEVANT"
-    },
-    "includeComments": {
-      "title": "Include Comments",
-      "type": "boolean",
-      "description": "Whether to scrape comments on the post",
-      "default": true
-    },
-    "includeReactions": {
-      "title": "Include Reactions",
-      "type": "boolean",
-      "description": "Whether to scrape reactions on the post",
-      "default": true
-    },
-    "reactionTypeFilter": {
-      "title": "Reaction Type Filter",
-      "type": "string",
-      "description": "Filter reactions by type",
-      "editor": "select",
-      "enum": ["ALL", "LIKE", "CELEBRATE", "LOVE", "INSIGHTFUL", "CURIOUS"],
-      "enumTitles": ["All Reactions", "Like", "Celebrate", "Love", "Insightful", "Curious"],
-      "prefill": "ALL"
-    },
-    "commentsLimit": {
-      "title": "Comments Limit",
-      "type": "integer",
-      "description": "Maximum number of comments to fetch per post (0 = unlimited)",
-      "editor": "number",
-      "default": 0
-    },
-    "reactionsLimit": {
-      "title": "Reactions Limit",
-      "type": "integer",
-      "description": "Maximum number of reactions to fetch per post (0 = unlimited)",
-      "editor": "number",
-      "default": 0
     }
   },
   "required": ["postUrls", "fileName"]
