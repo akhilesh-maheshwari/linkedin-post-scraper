@@ -1,6 +1,6 @@
 {
   "title": "LinkedIn Post Scraper",
-  "description": "Scrape comments and reactions from LinkedIn posts",
+  "description": "Scrape comments and reactions from LinkedIn posts",/
   "type": "object",
   "schemaVersion": 1,
   "properties": {
