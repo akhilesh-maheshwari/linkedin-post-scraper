@@ -3,7 +3,7 @@
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "postUrls": {
+    "postUrl": {
       "title": "Post URL or ID",
       "type": "string",
       "description": "LinkedIn post URL or ID",
@@ -18,5 +18,5 @@
       "default": "linkedin-post-scraper-output"
     }
   },
-  "required": ["postUrls", "fileName"]
+  "required": ["postUrl", "fileName"]
 }
