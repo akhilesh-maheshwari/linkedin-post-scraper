@@ -9,7 +9,8 @@ try {
   // ──────────────────────────────
   const input              = await Actor.getInput();
   const serviceTagName     = input.fileName           || '';
-  const postUrls           = input.postUrls           || [];
+  const postUrl            = input.postUrl            || '';
+  const postUrls           = postUrl ? [postUrl] : [];
   const sortCommentsBy     = input.sortCommentsBy     || 'MOST_RELEVANT';
   const includeComments    = input.includeComments    !== false;
   const includeReactions   = input.includeReactions   !== false;
@@ -201,7 +202,8 @@ try {
           includeReactions,
           reactionTypeFilter,
           commentsLimit,
-          reactionsLimit
+          reactionsLimit,
+          postUrl
         })
       }
     );
@@ -263,7 +265,8 @@ try {
             boomerangInputUrl,
             service_option_1 : serviceOption1,
             service_name     : serviceName,
-            request_source   : requestSource
+            request_source   : requestSource,
+            postUrl
           })
         }
       );
@@ -313,7 +316,7 @@ try {
         for (let attempt = 1; attempt <= maxAttempts; attempt++) {
           try {
             const statusRes = await fetch(
-              'https://frontend.boomerangserver.co.in/webhook/Status_and_output_universal',
+              'https://frontend.boomerangserver.co.in/webhook/Status_and_output_universal_flow',
               {
                 method : 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -343,6 +346,7 @@ try {
             }
 
             const statusData = JSON.parse(statusText);
+            console.log(`  Batch ${batch_number} full response:`, JSON.stringify(statusData));
             console.log(`  ✅ Batch ${batch_number} status:`, statusData.status);
 
             if (statusData.status === 'Completed' || statusData.status === 'Failed') {
@@ -362,7 +366,7 @@ try {
 
         try {
           await fetch(
-            'https://frontend.boomerangserver.co.in/webhook/Status_and_output_universal',
+            'https://frontend.boomerangserver.co.in/webhook/Status_and_output_universal_flow',
             {
               method : 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -418,7 +422,7 @@ try {
       let outputLink = '';
       try {
         const outputRes = await fetch(
-          'https://frontend.boomerangserver.co.in/webhook/Status_and_output_universal',
+          'https://frontend.boomerangserver.co.in/webhook/Status_and_output_universal_flow',
           {
             method : 'POST',
             headers: { 'Content-Type': 'application/json' },
