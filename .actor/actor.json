@@ -46,7 +46,18 @@
               "websites",
               "connections_count",
               "birthdate",
-              "positions"
+              "positions",
+              "schools",
+              "skills",
+              "languages",
+              "recommendations",
+              "volunteering_experience",
+              "photoUrl",
+              "backgroundUrl",
+              "request_type",
+              "reaction",
+              "reaction_type",
+              "comment"
             ]
           },
           "display": {
