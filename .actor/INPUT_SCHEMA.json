@@ -1,23 +1,19 @@
 {
   "title": "LinkedIn Post Scraper",
-  "description": "Scrape comments and reactions from LinkedIn posts",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
     "postUrls": {
-      "title": "Post URLs or IDs",
-      "type": "array",
-      "description": "Enter LinkedIn post URLs or post IDs (e.g. https://www.linkedin.com/posts/... or 73023469261...)",
-      "editor": "stringList",
-      "items": {
-        "type": "string"
-      },
-      "prefill": ["https://www.linkedin.com/posts/google_googleio-io25-gemini-activity-7330295765424046080-nSW4"]
+      "title": "Post URL or ID",
+      "type": "string",
+      "description": "LinkedIn post URL or ID",
+      "editor": "textfield",
+      "default": "https://www.linkedin.com/posts/google_googleio-io25-gemini-activity-7330295765424046080-nSW4"
     },
     "fileName": {
       "title": "Results File Name",
       "type": "string",
-      "description": "Name your results file (without extension)",
+      "description": "Name of the output file",
       "editor": "textfield",
       "default": "linkedin-post-scraper-output"
     }
