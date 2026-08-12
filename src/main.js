@@ -89,7 +89,7 @@ try {
   // ──────────────────────────────
   // 4. CALCULATE COST
   // ──────────────────────────────
-  const creditsCost = parseFloat((rowCount * 0.005).toFixed(3));
+  const creditsCost = parseFloat((rowCount * 0.01).toFixed(3));
   console.log('Post count     :', rowCount);
   console.log('Credits cost   : $', creditsCost);
 
@@ -473,14 +473,14 @@ try {
 
       if (rowsPushed > 0) {
         totalRowsDelivered += rowsPushed;
-        const batchCost     = parseFloat((rowsPushed * 0.005).toFixed(3));
+        const batchCost     = parseFloat((rowsPushed * 0.01).toFixed(3));
         totalCharged       += batchCost;
         console.log(`  💳 Batch ${batch_number} — Charging for ${rowsPushed} rows ($${batchCost}). Total charged: $${totalCharged.toFixed(3)}`);
         try {
           await Actor.charge({ eventName: serviceOption1, count: rowsPushed });
         } catch (chargeErr) {
           const remainingLeads = rowCount - totalRowsDelivered;
-          const remainingCost  = parseFloat((remainingLeads * 0.005).toFixed(3));
+          const remainingCost  = parseFloat((remainingLeads * 0.01).toFixed(3));
           console.log(`\n❌ Insufficient Apify credits — run stopped.`);
           console.log(`✅ Leads delivered : ${totalRowsDelivered}`);
           console.log(`💳 Total charged   : $${totalCharged.toFixed(3)}`);
