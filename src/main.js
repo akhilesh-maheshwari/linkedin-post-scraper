@@ -320,7 +320,7 @@ try {
               {
                 method : 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                signal : AbortSignal.timeout(120000),
+                signal : AbortSignal.timeout(300000),
                 body   : JSON.stringify({
                   request_id,
                   batch_number,
@@ -370,7 +370,7 @@ try {
             {
               method : 'POST',
               headers: { 'Content-Type': 'application/json' },
-              signal : AbortSignal.timeout(30000),
+              signal : AbortSignal.timeout(300000),
               body   : JSON.stringify({
                 userId, runId, time, serviceTagName,
                 rowCount          : job.batch_size || rowCount,
